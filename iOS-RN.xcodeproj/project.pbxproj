@@ -13,6 +13,14 @@
 		3B6A0D3D2269DAC3001F627B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A0D3C2269DAC3001F627B /* Assets.xcassets */; };
 		3B6A0D402269DAC3001F627B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A0D3E2269DAC3001F627B /* LaunchScreen.storyboard */; };
 		3B6A0D432269DAC3001F627B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D422269DAC3001F627B /* main.m */; };
+		3B6A0D4A2269DBB3001F627B /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A0D492269DBB3001F627B /* package.json */; };
+		3B6A0D4F2269E08A001F627B /* ReactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D4E2269E08A001F627B /* ReactView.m */; };
+		3B6A0D5D2269E313001F627B /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D5C2269E313001F627B /* RNViewController.m */; };
+		3B6A0D602269E4D5001F627B /* RCTModules.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D5F2269E4D5001F627B /* RCTModules.m */; };
+		3B6A0D632269E583001F627B /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D622269E583001F627B /* TwoViewController.m */; };
+		3B6A0D662269E5AE001F627B /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D652269E5AE001F627B /* ThreeViewController.m */; };
+		3B6A0D682269EA89001F627B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3B6A0D672269EA89001F627B /* .gitignore */; };
+		5F327746E176244E9C542199 /* libPods-iOS-RN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715A003DFE21E0BDE8627B2A /* libPods-iOS-RN.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,21 @@
 		3B6A0D3F2269DAC3001F627B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B6A0D412269DAC3001F627B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B6A0D422269DAC3001F627B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B6A0D492269DBB3001F627B /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		3B6A0D4D2269E08A001F627B /* ReactView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactView.h; sourceTree = "<group>"; };
+		3B6A0D4E2269E08A001F627B /* ReactView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactView.m; sourceTree = "<group>"; };
+		3B6A0D5B2269E313001F627B /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
+		3B6A0D5C2269E313001F627B /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
+		3B6A0D5E2269E4D5001F627B /* RCTModules.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTModules.h; sourceTree = "<group>"; };
+		3B6A0D5F2269E4D5001F627B /* RCTModules.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTModules.m; sourceTree = "<group>"; };
+		3B6A0D612269E583001F627B /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		3B6A0D622269E583001F627B /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		3B6A0D642269E5AE001F627B /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		3B6A0D652269E5AE001F627B /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		3B6A0D672269EA89001F627B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		500A70821D522E9041A6A546 /* Pods-iOS-RN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RN/Pods-iOS-RN.debug.xcconfig"; sourceTree = "<group>"; };
+		60D11BD7EEF198D3197617BF /* Pods-iOS-RN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RN.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RN/Pods-iOS-RN.release.xcconfig"; sourceTree = "<group>"; };
+		715A003DFE21E0BDE8627B2A /* libPods-iOS-RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +56,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F327746E176244E9C542199 /* libPods-iOS-RN.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DEA6C93E70015327597BB27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				500A70821D522E9041A6A546 /* Pods-iOS-RN.debug.xcconfig */,
+				60D11BD7EEF198D3197617BF /* Pods-iOS-RN.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3B6A0D272269DAC1001F627B = {
 			isa = PBXGroup;
 			children = (
+				3B6A0D672269EA89001F627B /* .gitignore */,
+				3B6A0D492269DBB3001F627B /* package.json */,
 				3B6A0D322269DAC1001F627B /* iOS-RN */,
 				3B6A0D312269DAC1001F627B /* Products */,
+				2DEA6C93E70015327597BB27 /* Pods */,
+				ABF5D9CB9312983CDE8D64F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +99,31 @@
 				3B6A0D342269DAC1001F627B /* AppDelegate.m */,
 				3B6A0D362269DAC1001F627B /* ViewController.h */,
 				3B6A0D372269DAC1001F627B /* ViewController.m */,
+				3B6A0D5B2269E313001F627B /* RNViewController.h */,
+				3B6A0D5C2269E313001F627B /* RNViewController.m */,
+				3B6A0D5E2269E4D5001F627B /* RCTModules.h */,
+				3B6A0D5F2269E4D5001F627B /* RCTModules.m */,
+				3B6A0D612269E583001F627B /* TwoViewController.h */,
+				3B6A0D622269E583001F627B /* TwoViewController.m */,
+				3B6A0D642269E5AE001F627B /* ThreeViewController.h */,
+				3B6A0D652269E5AE001F627B /* ThreeViewController.m */,
 				3B6A0D392269DAC1001F627B /* Main.storyboard */,
 				3B6A0D3C2269DAC3001F627B /* Assets.xcassets */,
 				3B6A0D3E2269DAC3001F627B /* LaunchScreen.storyboard */,
 				3B6A0D412269DAC3001F627B /* Info.plist */,
 				3B6A0D422269DAC3001F627B /* main.m */,
+				3B6A0D4D2269E08A001F627B /* ReactView.h */,
+				3B6A0D4E2269E08A001F627B /* ReactView.m */,
 			);
 			path = "iOS-RN";
+			sourceTree = "<group>";
+		};
+		ABF5D9CB9312983CDE8D64F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				715A003DFE21E0BDE8627B2A /* libPods-iOS-RN.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B6A0D462269DAC3001F627B /* Build configuration list for PBXNativeTarget "iOS-RN" */;
 			buildPhases = (
+				1700CE35A5BCA425D9EBA406 /* [CP] Check Pods Manifest.lock */,
 				3B6A0D2C2269DAC1001F627B /* Sources */,
 				3B6A0D2D2269DAC1001F627B /* Frameworks */,
 				3B6A0D2E2269DAC1001F627B /* Resources */,
@@ -128,6 +184,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6A0D682269EA89001F627B /* .gitignore in Resources */,
+				3B6A0D4A2269DBB3001F627B /* package.json in Resources */,
 				3B6A0D402269DAC3001F627B /* LaunchScreen.storyboard in Resources */,
 				3B6A0D3D2269DAC3001F627B /* Assets.xcassets in Resources */,
 				3B6A0D3B2269DAC1001F627B /* Main.storyboard in Resources */,
@@ -136,14 +194,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1700CE35A5BCA425D9EBA406 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-RN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B6A0D2C2269DAC1001F627B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6A0D632269E583001F627B /* TwoViewController.m in Sources */,
+				3B6A0D5D2269E313001F627B /* RNViewController.m in Sources */,
+				3B6A0D602269E4D5001F627B /* RCTModules.m in Sources */,
+				3B6A0D4F2269E08A001F627B /* ReactView.m in Sources */,
 				3B6A0D382269DAC1001F627B /* ViewController.m in Sources */,
 				3B6A0D432269DAC3001F627B /* main.m in Sources */,
 				3B6A0D352269DAC1001F627B /* AppDelegate.m in Sources */,
+				3B6A0D662269E5AE001F627B /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +371,7 @@
 		};
 		3B6A0D472269DAC3001F627B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500A70821D522E9041A6A546 /* Pods-iOS-RN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +388,7 @@
 		};
 		3B6A0D482269DAC3001F627B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60D11BD7EEF198D3197617BF /* Pods-iOS-RN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

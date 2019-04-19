@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+inhibit_all_warnings!
+
+target 'iOS-RN' do
+    pod 'DoubleConversion', :podspec => './node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'Folly', :podspec => './node_modules/react-native/third-party-podspecs/Folly.podspec'
+    pod 'glog', :podspec => './node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'yoga', :path => './node_modules/react-native/ReactCommon/yoga'
+    pod 'React', :path => './node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'RCTNetwork',
+    'RCTImage',
+    'RCTWebSocket',
+    'RCTLinkingIOS',
+    'DevSupport',
+    'RCTAnimation',
+    'RCTActionSheet',
+    'ART',
+    'CxxBridge',# Include if RN >= 0.47
+    'DevSupport'
+    ]
+
+end
