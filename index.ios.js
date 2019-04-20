@@ -5,8 +5,8 @@ import {
     Text,
     View
 } from 'react-native';
-import HomeView from './JS/Home'
-import App from './JS/App';
+
+import App from './js/App';
 export default class iOSRN extends Component {
     render() {
         return (

@@ -29,8 +29,7 @@
 }
 -(void)press:(UIButton *)btn{
     TwoViewController * two =[[TwoViewController alloc]init];
-    UINavigationController * nav =[[UINavigationController alloc]initWithRootViewController:two];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:two animated:true];
     
 }
 

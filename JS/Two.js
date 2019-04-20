@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 var RNModules  = NativeModules.RTModule;
-export default class Home extends Component {
+export default class Two extends Component {
     render() {
         return (
             <View style={styles.container}>

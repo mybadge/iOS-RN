@@ -1,25 +1,30 @@
 
-class MyHomeScreen extends React.Component {
-    static navigationOptions = {
-      title: 'Home',
+import React, { Component } from 'react';
+import {
+    Button
+} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import  Home from './Home'
+import  Two from  './Two'
+
+const MainNavigator = createStackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      title: 'This is Home',
+      headerLeft: (
+              <Button
+                  title='返回'
+                  onPress={ ()=> {
+                      alert('aa， todo back');
+                  }}
+              />
+          ),
     }
-  
-    render() {
-      return (
-        <Button
-          onPress={() => this.props.navigation.navigate('Profile', {name: 'Lucy'})}
-          title="Go to Lucy's profile"
-        />
-      );
-    }
-  }
-  
-  const ModalStack = StackNavigator({
-    Home: {
-      screen: MyHomeScreen,
-    },
-    Profile: {
-      path: 'people/:name',
-      screen: MyProfileScreen,
-    },
-  });
+  },
+  Two: {screen: Two},
+});
+
+const App = createAppContainer(MainNavigator);
+
+export default App;

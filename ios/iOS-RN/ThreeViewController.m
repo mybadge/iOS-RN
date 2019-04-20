@@ -17,11 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = NO;
-    self.navigationController.title = @"我是原生";
+    self.navigationController.title = @"I am native";
     self.view.backgroundColor = [UIColor whiteColor];
     UILabel * label = [[UILabel alloc]init];
-    label.frame = CGRectMake(50, 70, (self.view.frame.size.width-100), 44);
-    label.text = @"我又回来了";
+    label.frame = CGRectMake(50, 270, (self.view.frame.size.width-100), 44);
+    label.text = @"I am back";
     [self.view addSubview:label];
     
 }

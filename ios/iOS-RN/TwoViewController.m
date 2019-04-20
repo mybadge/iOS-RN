@@ -29,6 +29,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doPushNotification:) name:@"RNOpenOneVC" object:nil];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 - (void)doPushNotification:(NSNotification *)notification{
     NSLog(@"成功收到===>通知");
     ThreeViewController *one = [[ThreeViewController alloc]init];
