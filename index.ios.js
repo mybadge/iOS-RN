@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import {
     AppRegistry,
-    StyleSheet,
-    Text,
-    View
+    StyleSheet
 } from 'react-native';
 
-import App from './js/App';
+import MainNav from './js/MainNav';
 export default class iOSRN extends Component {
     render() {
         return (
-            <App />
+            <MainNav />
         );
     }
 }
