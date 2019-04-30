@@ -1,13 +1,20 @@
 
 import React from 'react';
-import {
-    Button
-} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import  Home from './Home'
 import  Two from  './Two'
 import SPWebView from './SPWebView';
 import FadeAnimate from './Animate/FadeAnimate';
+
+import {
+  NativeModules,
+  NativeAppEventEmitter,//导入
+  Button
+} from 'react-native';
+//在JavaScript中调用Object-C定义的方法，需要先导入NativeModules
+//此处的RNCalliOSAction就是我们在iOS上新建的类名
+//如果在iOS中设置了导出了类的名字，此处需要和导出的名字一致
+var RNCalliOSAction = NativeModules.RNCalliOSAction;
 
 
 const MainNavigator = createStackNavigator({
@@ -19,7 +26,7 @@ const MainNavigator = createStackNavigator({
               <Button
                   title='返回'
                   onPress={ ()=> {
-                      alert('aa， todo back');
+                      RNCalliOSAction.calliOSActionWithOneParams('backAction');
                   }}
               />
           ),

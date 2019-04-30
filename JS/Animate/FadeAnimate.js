@@ -16,8 +16,6 @@ import {
 
 const {width, height} = Dimensions.get('window');
 
-//import {Easing} from 'react-native-linear-gradient';
-
 export default class FadeAnimate extends Component {
     
     constructor(props) {

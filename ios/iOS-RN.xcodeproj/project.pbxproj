@@ -18,6 +18,7 @@
 		3B6A0D602269E4D5001F627B /* RCTModules.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D5F2269E4D5001F627B /* RCTModules.m */; };
 		3B6A0D632269E583001F627B /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D622269E583001F627B /* TwoViewController.m */; };
 		3B6A0D662269E5AE001F627B /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0D652269E5AE001F627B /* ThreeViewController.m */; };
+		3BA90AF322786B7B000575D4 /* RNCalliOSAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA90AF222786B7B000575D4 /* RNCalliOSAction.m */; };
 		5F327746E176244E9C542199 /* libPods-iOS-RN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715A003DFE21E0BDE8627B2A /* libPods-iOS-RN.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		3B6A0D622269E583001F627B /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 		3B6A0D642269E5AE001F627B /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
 		3B6A0D652269E5AE001F627B /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		3BA90AF122786B7B000575D4 /* RNCalliOSAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCalliOSAction.h; sourceTree = "<group>"; };
+		3BA90AF222786B7B000575D4 /* RNCalliOSAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCalliOSAction.m; sourceTree = "<group>"; };
 		500A70821D522E9041A6A546 /* Pods-iOS-RN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RN/Pods-iOS-RN.debug.xcconfig"; sourceTree = "<group>"; };
 		60D11BD7EEF198D3197617BF /* Pods-iOS-RN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RN.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RN/Pods-iOS-RN.release.xcconfig"; sourceTree = "<group>"; };
 		715A003DFE21E0BDE8627B2A /* libPods-iOS-RN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-RN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +100,8 @@
 				3B6A0D5C2269E313001F627B /* RNViewController.m */,
 				3B6A0D5E2269E4D5001F627B /* RCTModules.h */,
 				3B6A0D5F2269E4D5001F627B /* RCTModules.m */,
+				3BA90AF122786B7B000575D4 /* RNCalliOSAction.h */,
+				3BA90AF222786B7B000575D4 /* RNCalliOSAction.m */,
 				3B6A0D612269E583001F627B /* TwoViewController.h */,
 				3B6A0D622269E583001F627B /* TwoViewController.m */,
 				3B6A0D642269E5AE001F627B /* ThreeViewController.h */,
@@ -223,6 +228,7 @@
 				3B6A0D382269DAC1001F627B /* ViewController.m in Sources */,
 				3B6A0D432269DAC3001F627B /* main.m in Sources */,
 				3B6A0D352269DAC1001F627B /* AppDelegate.m in Sources */,
+				3BA90AF322786B7B000575D4 /* RNCalliOSAction.m in Sources */,
 				3B6A0D662269E5AE001F627B /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

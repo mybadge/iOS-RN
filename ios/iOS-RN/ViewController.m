@@ -20,11 +20,12 @@
     
     UIButton * btn =[UIButton buttonWithType: UIButtonTypeCustom];
     btn.frame =CGRectMake(100,100, self.view.frame.size.width-200, 50);
-    [btn setTitle:@"点我跳原生" forState:UIControlStateNormal];
+    [btn setTitle:@"点我去RN" forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(press:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backAction) name:@"backAction" object:nil];
     
 }
 -(void)press:(UIButton *)btn{
@@ -38,5 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:true];
+}
 
 @end
