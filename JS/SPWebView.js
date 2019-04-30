@@ -13,7 +13,6 @@ class SPWebView extends Component {
         return (
         
             <WebView
-                    // style={{width:300,height:300}}
                     originWhitelist={['*']}
                     // source={{ html: '<h1>Hello world</h1>' }}
                     source={{ uri: 'https://www.baidu.com' }}

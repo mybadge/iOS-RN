@@ -21,6 +21,10 @@ export default class Home extends Component {
                 <Text style={styles.instructions} onPress={()=>this.navigatePressToWebView(navigate) }>
                   点我跳转 webView
                 </Text>
+
+                <Text style={styles.instructions} onPress={()=>navigate('FadeAnimate') }>
+                  点我跳转 FadeAnimate
+                </Text>
             </View>
         );
     }
@@ -47,6 +51,7 @@ const styles = StyleSheet.create({
     instructions: {
         textAlign: 'center',
         color: '#333333',
-        marginBottom: 5,
+        marginBottom: 15,
+        marginTop: 10,
     },
 });

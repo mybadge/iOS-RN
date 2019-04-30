@@ -7,6 +7,8 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import  Home from './Home'
 import  Two from  './Two'
 import SPWebView from './SPWebView';
+import FadeAnimate from './Animate/FadeAnimate';
+
 
 const MainNavigator = createStackNavigator({
   Home: {
@@ -30,9 +32,15 @@ const MainNavigator = createStackNavigator({
       title: 'this is webView'
     }
   },
+  FadeAnimate: {
+    screen: FadeAnimate,
+    navigationOptions: {
+      title: 'FadeAnimate'
+    }
+  }
 
 });
 
-const App = createAppContainer(MainNavigator);
+const MainNav = createAppContainer(MainNavigator);
 
-export default App;
+export default MainNav;
