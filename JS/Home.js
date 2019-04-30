@@ -1,7 +1,7 @@
 /**
  * Created by guohongan on 2017/7/11.
  */
-import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
@@ -17,11 +17,18 @@ export default class Home extends Component {
                 <Text style={styles.instructions} onPress={()=>this.navigatePress(navigate)}>
                   我是RN,点我跳转
                 </Text>
+
+                <Text style={styles.instructions} onPress={()=>this.navigatePressToWebView(navigate) }>
+                  点我跳转 webView
+                </Text>
             </View>
         );
     }
     navigatePress=(navigate)=>{
         navigate('Two', {});
+    }
+    navigatePressToWebView= (navigate)=>{
+        navigate('SPWebView', {});
     }
 }
 

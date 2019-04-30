@@ -1,11 +1,12 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Button
 } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import  Home from './Home'
 import  Two from  './Two'
+import SPWebView from './SPWebView';
 
 const MainNavigator = createStackNavigator({
   Home: {
@@ -23,6 +24,13 @@ const MainNavigator = createStackNavigator({
     }
   },
   Two: {screen: Two},
+  SPWebView: { 
+    screen: SPWebView,
+    navigationOptions: {
+      title: 'this is webView'
+    }
+  },
+
 });
 
 const App = createAppContainer(MainNavigator);

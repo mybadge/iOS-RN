@@ -1,7 +1,7 @@
 /**
  * Created by guohongan on 2017/7/11.
  */
-import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
