@@ -26,7 +26,6 @@ target 'iOS-RN' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
-
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
 end

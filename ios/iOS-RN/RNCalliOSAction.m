@@ -39,7 +39,6 @@ RCT_EXPORT_METHOD(calliOSActionWithOneParams:(NSString *)name)
             [self backAction];
         } else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RNOpenOneVC" object:nil];
-            
         }
     });
 }
