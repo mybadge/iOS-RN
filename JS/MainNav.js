@@ -11,6 +11,7 @@ import {
   NativeAppEventEmitter,//导入
   Button
 } from 'react-native';
+import DetailVC from './DetailVC';
 //在JavaScript中调用Object-C定义的方法，需要先导入NativeModules
 //此处的RNCalliOSAction就是我们在iOS上新建的类名
 //如果在iOS中设置了导出了类的名字，此处需要和导出的名字一致
@@ -44,7 +45,13 @@ const MainNavigator = createStackNavigator({
     navigationOptions: {
       title: 'FadeAnimate'
     }
-  }
+  },
+  DetailVC: {
+    screen: DetailVC,
+    navigationOptions: {
+      title: 'DetailVC'
+    }
+  },
 
 });
 

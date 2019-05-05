@@ -25,6 +25,10 @@ export default class Home extends Component {
                 <Text style={styles.instructions} onPress={()=>navigate('FadeAnimate') }>
                   点我跳转 FadeAnimate
                 </Text>
+
+                <Text style={styles.instructions} onPress={()=>navigate('DetailVC') }>
+                  点我跳转 商品详情
+                </Text>
             </View>
         );
     }

@@ -18,7 +18,7 @@ RCT_EXPORT_METHOD(RNOpenOneVC:(NSString *)msg){
     //主要这里必须使用主线程发送,不然有可能失效
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"RNOpenOneVC" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RNOpenOneVC" object:nil];
     });
 }
 @end

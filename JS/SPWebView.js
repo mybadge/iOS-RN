@@ -12,14 +12,14 @@ class SPWebView extends Component {
     render() {
         return (
         
-            <WebView
-                    originWhitelist={['*']}
-                    // source={{ html: '<h1>Hello world</h1>' }}
-                    source={{ uri: 'https://www.baidu.com' }}
-                    onLoadStart={this._onLoadStart}
-                    onLoadEnd={this._onLoadEnd}
-                    allowsInlineMediaPlayback={true}
-                />
+            <WebView style={this.props.style}
+                originWhitelist={['*']}
+                // source={{ html: '<h1>Hello world</h1>' }}
+                source={{ uri: 'https://www.baidu.com' }}
+                onLoadStart={this._onLoadStart}
+                onLoadEnd={this._onLoadEnd}
+                allowsInlineMediaPlayback={true}
+            />
         )
     }
 }
