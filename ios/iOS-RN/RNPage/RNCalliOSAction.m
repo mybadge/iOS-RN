@@ -9,7 +9,7 @@
 #import "RNCalliOSAction.h"
 
 #import <React/RCTEventDispatcher.h>
-
+#import "ViewController.h"
 
 @implementation RNCalliOSAction
 @synthesize bridge = _bridge;
@@ -37,9 +37,25 @@ RCT_EXPORT_METHOD(calliOSActionWithOneParams:(NSString *)name)
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([name isEqualToString:@"backAction"]) {
             [self backAction];
-        } else {
+        } else if ([name isEqualToString:@"ViewController"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RNOpenOneVC" object:nil userInfo:@{@"pageName": @"ViewController"}];
+        } else if ([name isEqualToString:@"backToTopAction"]) {
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"backToTopAction" object:nil];
+        }
+        else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RNOpenOneVC" object:nil];
         }
+    });
+}
+
+RCT_EXPORT_METHOD(openNativePage:(NSDictionary *)dict)
+{
+    NSLog(@"RN传入原生界面的数据为:%@",dict);
+    //主要这里必须使用主线程发送,不然有可能失效
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RNOpenOneVCWithDict" object:nil userInfo:dict];
+        
     });
 }
 

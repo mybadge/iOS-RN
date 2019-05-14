@@ -9,6 +9,7 @@
         "react": "16.8.3",
         "react-native": "0.59.5",
         "react-native-actionsheet": "^2.4.2",
+        "react-native-exception-handler": "^2.10.7",
         "react-native-gesture-handler": "^1.1.0",
         "react-native-linear-gradient": "^2.5.4",
         "react-native-webview": "^5.8.0",

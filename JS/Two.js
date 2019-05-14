@@ -10,14 +10,14 @@ import {
     NativeModules
 } from 'react-native';
 
-var RNModules  = NativeModules.RTModule;
+//var RNModules  = NativeModules.RTModule;
 export default class Two extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.instructions} onPress={()=>RNModules.RNOpenOneVC('测试')} >
+                {/* <Text style={styles.instructions} onPress={()=>RNModules.RNOpenOneVC('测试')} >
                 我还是RN界面, 点我才能回原生哦
-                </Text>
+                </Text> */}
             </View>
         );
     }

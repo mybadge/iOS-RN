@@ -1,19 +1,17 @@
 //
-//  RCTModules.h
+//  RNCalliOSAction.h
 //  iOS-RN
 //
-//  Created by Shangpin on 2019/4/19.
+//  Created by Shangpin on 2019/4/30.
 //  Copyright © 2019 Shangpin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 
-///#import "RCTBridgeModule.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RCTModules : NSObject<RCTBridgeModule>
+@interface RNCalliOSAction : NSObject<RCTBridgeModule>
 
 @end
 

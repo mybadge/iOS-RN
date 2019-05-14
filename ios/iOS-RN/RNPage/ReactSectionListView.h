@@ -1,8 +1,8 @@
 //
-//  TwoViewController.h
+//  ReactSectionListView.h
 //  iOS-RN
 //
-//  Created by Shangpin on 2019/4/19.
+//  Created by Shangpin on 2019/5/9.
 //  Copyright © 2019 Shangpin. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TwoViewController : UIViewController
+@interface ReactSectionListView : UIView
 
 @end
 

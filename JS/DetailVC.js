@@ -11,6 +11,8 @@ import SPWebView from './SPWebView';
 const SCREEN_H = Dimensions.get('window').height;
 const SCREEN_W = Dimensions.get('window').width;
 
+import AppDef from './Common/ComponentDef'
+
 export default class DetailVC extends Component {
     constructor() {
         super()
@@ -26,33 +28,33 @@ export default class DetailVC extends Component {
             refreshing: false,
             loading: false,
         };
-        this.aniBack = new Animated.Value(0);
+
     }
     render() {
         return (
-            <ScrollView style={{flex:1}}>
+            <ScrollView 
+                scrollEnabled={false}
+                ref={(scrollView)=> this.myScrollView=scrollView} 
+                style={{flex:1}}>
                 
                 <FlatList
-                    style={{width:SCREEN_W, height:SCREEN_H}}
+                    style={{width:SCREEN_W, height:SCREEN_H-AppDef.naviheight-AppDef.SafeAreaBottomHeight}}
                     data={this.state.dataSource}
                     renderItem={(item) => <Text style={styles.text}>{item.item.content}</Text>}
                     keyExtractor={item => item.content}
-                    // ListFooterComponent={this.renderFooter}
+                    ListFooterComponent={this.renderFooter}
                     refreshing={this.state.refreshing}
                     onRefresh={this.handleRefresh}
-                    // onEndReached={this.handleLoadMore}
-                    // onEndReachedThreshold={0} 
-                    bounces={false}
+                    // onMomentumScrollEnd={this._onMomentumScrollEnd}
+                    onScrollEndDrag={this._onScrollEndDrag}
                 />
-                <SPWebView style={{width:SCREEN_W, height:SCREEN_H, marginTop: 10}} />
-                {/* <Animated.View style={[{
-                    marginTop: this.aniBack.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, -SCREEN_H],
-                        })
-                    }]}
-                >
-                </Animated.View> */}
+
+                <SPWebView
+                    onLayout={(event)=> this.layout = event.nativeEvent.layout }
+                    style={{
+                        width:SCREEN_W, 
+                        height:SCREEN_H-AppDef.naviheight, 
+                        marginTop: 10}} />
                 
             </ScrollView>
         );
@@ -70,11 +72,15 @@ export default class DetailVC extends Component {
     }
 
     requestData = ()=>{
+        this.setState({
+            laoding: true
+        });
         const url = 'https://api.github.com/users/mybadge/repos';
         fetch(url).then(res => {
           console.log('started fetch');
           return res.json()
         }).then(res => {
+            
             console.log('==> fetch data', res);
             this.setState({
                 data: [...this.state.data, ...res], 
@@ -95,51 +101,56 @@ export default class DetailVC extends Component {
             loading: false,
             data: [],
           }, () => {
-            this._startAniBackTop();
+            this.requestData();
           });
+        //   this.clickToScroll();
+    }
+
+    clickToScroll = () => {
+        //先用measure测量出位置
+        // this.totopView.measure((fx, fy, width, height, px, py) => {
+        //     console.log('Component width is: ' + width)
+        //     console.log('Component height is: ' + height)
+        //     console.log('X offset to frame: ' + fx)
+        //     console.log('Y offset to frame: ' + fy)
+        //     console.log('X offset to page: ' + px)
+        //     console.log('Y offset to page: ' + py)
+        //     //然后用scrollTo跳转到对应位置
+        //     //x是水平方向
+        //     //y是垂直方向
+        //     this.myScrollView.scrollTo({ x: px, y: py+height, animated: true });
+        // });
+        // this.myScrollView.scrollTo({ x: 0, y: this.layout.y, animated: true});
+
+        this.myScrollView.scrollToEnd();
+    }
+
+    _onScrollEndDrag = (e)=> {
+        var offsetY = e.nativeEvent.contentOffset.y; //滑动距离
+        var contentSizeHeight = e.nativeEvent.contentSize.height; //scrollView contentSize高度
+        var oriageScrollHeight = e.nativeEvent.layoutMeasurement.height; //scrollView高度
+        if (offsetY + oriageScrollHeight >= contentSizeHeight+30){
+            console.log('上传滑动到底部事件')
+            this.myScrollView.scrollToEnd();
+        }
     }
 
     renderFooter = ()=>{
-        if (this.state.loading) return null;
+        if (!this.state.loading) return null;
         return (
-            <View
-              style={{
-                    flex: 1,
-                    paddingVertical: 20,
-                    borderTopWidth: 1,
-                    borderColor: "#CED0CE",
-                    alignItems: "center"
-              }}
-            ><Text>下拉查看更多详情</Text>
-              <ActivityIndicator animating size="large" />
+            <View 
+                ref={(view)=> this.totopView=view } 
+                style={{
+                        flex: 1,
+                        height: 30,
+                        backgroundColor: "#CED0CE",
+                        alignItems: "center",
+                        justifyContent:'center'
+                }}
+            >
+                <Text style={{ alignItems: "center", justifyContent:'center'}} onPress={()=>this.clickToScroll()}>下拉查看更多详情</Text>
             </View>
           );
-    }
-
-    /// 上滑
-    _startAniBackTop = ()=> {
-        this.setState({
-            data: [], 
-            error: null,
-            laoding: false,
-            refreshing: false,
-        });
-        // this.aniBack.setValue(0);
-        // Animated.timing(this.aniBack, {
-        //     duration: 1000,
-        //     toValue: 1,
-        // }).start(() => {
-        // });
-    }
-
-    /// 下滑
-    _startAniNext() {
-        this.aniBack.setValue(0);
-        Animated.timing(this.aniBack, {
-            duration: 1000,
-            toValue: 1,
-        }).start(() => {
-        });
     }
 }
 

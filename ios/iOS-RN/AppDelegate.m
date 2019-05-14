@@ -7,16 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "SingleClass.h"
+#import <React/RCTBridge.h>
+#import <React/RCTBridgeDelegate.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<RCTBridgeDelegate>
 
 @end
 
 @implementation AppDelegate
 
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
+    NSString *strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
+    NSURL *jsCodeLocation = [NSURL URLWithString:strUrl];
+    //NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+    return jsCodeLocation;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    RCTBridge *brige = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+    
+    SingleClass *sc = [SingleClass initWithLaunchOptions:launchOptions];
+    sc.bridge = brige;
+    
     return YES;
 }
 

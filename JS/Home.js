@@ -6,29 +6,56 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
+;
+// var raToRnManger = NativeModules.EventEmitterManger
 export default class Home extends Component {
+
+
+  componentWillMount(){
+      //var raToRnMangerEmitter = new NativeEventEmitter(raToRnManger)
+      // const subscription = raToRnMangerEmitter.addListener("EventReminder",
+      //    (reminder) => {
+      //        console.log("test")
+      //          this.setState({
+      //              name:"B"
+      //          })
+      //    }
+      // );
+}
+
+    constructor(props) {
+      super(props);
+      const data = ['Two', 'SPWebView', 'FadeAnimate', 'DetailVC', 'CatchErrorPage', 
+      'FlexDimensionsBasics', 'Touchables', 'SectionListBasics', 
+      'Networking'
+    ];
+
+      this.state = ({
+        data: data,
+        name: ''
+      }) 
+    }
+
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.instructions} onPress={()=>this.navigatePress(navigate)}>
-                  我是RN,点我跳转
-                </Text>
-
-                <Text style={styles.instructions} onPress={()=>this.navigatePressToWebView(navigate) }>
-                  点我跳转 webView
-                </Text>
-
-                <Text style={styles.instructions} onPress={()=>navigate('FadeAnimate') }>
-                  点我跳转 FadeAnimate
-                </Text>
-
-                <Text style={styles.instructions} onPress={()=>navigate('DetailVC') }>
-                  点我跳转 商品详情
-                </Text>
+            {
+              this.state.data.map((pageName)=>{
+                return (
+                  
+                  <TouchableOpacity key={pageName}>
+                  <Text  style={styles.instructions} onPress={()=>navigate(pageName) }>
+                  点我跳转 {pageName}
+                </Text></TouchableOpacity>
+                )
+              })
+            }
+                
             </View>
         );
     }
@@ -43,9 +70,11 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
         backgroundColor: '#F5FCFF',
+        paddingLeft: 15,
+        paddingTop: 10,
     },
     welcome: {
         fontSize: 20,
@@ -55,7 +84,8 @@ const styles = StyleSheet.create({
     instructions: {
         textAlign: 'center',
         color: '#333333',
-        marginBottom: 15,
+        marginBottom: 10,
+        height: 35,
         marginTop: 10,
     },
 });

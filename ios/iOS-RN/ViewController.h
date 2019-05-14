@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPRNBaseController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : SPRNBaseController
 
 
 @end

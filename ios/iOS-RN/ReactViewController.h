@@ -1,5 +1,5 @@
 //
-//  RNViewController.h
+//  TwoViewController.h
 //  iOS-RN
 //
 //  Created by Shangpin on 2019/4/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RNViewController : UIViewController
+@interface ReactViewController : UIViewController
 
 @end
 

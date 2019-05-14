@@ -1,35 +1,17 @@
 import React, { Component } from 'react';
 import {
-    AppRegistry,
-    StyleSheet
+    AppRegistry
 } from 'react-native';
 
 import MainNav from './js/MainNav';
-export default class iOSRN extends Component {
+import FlexDimensionsBasics from './js/Demo/FlexDimensionsBasics'
+import SPRNComponent from './js/SPRNComponent';
+export default class iOSRN extends SPRNComponent {
     render() {
         return (
-            <MainNav />
+            <FlexDimensionsBasics />
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
 
 AppRegistry.registerComponent('iOSRN', () => iOSRN);

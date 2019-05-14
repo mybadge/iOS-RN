@@ -6,15 +6,18 @@
 //  Copyright © 2017年 UIViewCon. All rights reserved.
 //
 
-#import "TwoViewController.h"
+#import "ReactViewController.h"
 #import "ReactView.h"
 #import "AppDelegate.h"
 #import "ThreeViewController.h"
-@interface TwoViewController ()
+#import "ViewController.h"
+#import "SectionListController.h"
+
+@interface ReactViewController ()
 
 @end
 
-@implementation TwoViewController
+@implementation ReactViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,22 +29,25 @@
     //self.navigationItem.title = @"我是包含RN的原生页面哟~";
     ReactView * reactView = [[ReactView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height)];
     [self.view addSubview:reactView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doPushNotification:) name:@"RNOpenOneVC" object:nil];
+    
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:(UIBarButtonItemStylePlain) target:self action:@selector(backTopAction)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+- (void)backTopAction {
+    if (self.navigationController.childViewControllers.count > 40) {
+        [self.navigationController popToRootViewControllerAnimated:true];
+    } else {
+        SectionListController *vc = [SectionListController initVC];
+        [self.navigationController pushViewController:vc animated:true];
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-- (void)doPushNotification:(NSNotification *)notification{
-    NSLog(@"成功收到===>通知");
-    ThreeViewController *one = [[ThreeViewController alloc]init];
-    
-    
-    [self.navigationController pushViewController:one animated:YES];
-    
-    //注意不能在这里移除通知否则pus进去后有pop失效
-}
+
 /*
  #pragma mark - Navigation
  
@@ -51,5 +57,7 @@
  // Pass the selected object to the new view controller.
  }
  */
-
+- (void)dealloc {
+    NSLog(@"TwoViewController 释放了");
+}
 @end

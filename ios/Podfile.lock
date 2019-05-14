@@ -61,6 +61,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - ReactNativeExceptionHandler (2.10.7):
+    - React
   - RNGestureHandler (1.1.0):
     - React
   - yoga (0.59.5.React)
@@ -82,6 +84,7 @@ DEPENDENCIES:
   - React/RCTNetwork (from `./../node_modules/react-native`)
   - React/RCTText (from `./../node_modules/react-native`)
   - React/RCTWebSocket (from `./../node_modules/react-native`)
+  - ReactNativeExceptionHandler (from `../node_modules/react-native-exception-handler`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - yoga (from `./../node_modules/react-native/ReactCommon/yoga`)
 
@@ -102,6 +105,8 @@ EXTERNAL SOURCES:
     :path: "./../node_modules/react-native"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
+  ReactNativeExceptionHandler:
+    :path: "../node_modules/react-native-exception-handler"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   yoga:
@@ -115,9 +120,10 @@ SPEC CHECKSUMS:
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   React: 1d605e098d69bdf08960787f3446f0a9dc2e2ccf
   react-native-webview: a42108b827082f8f0333529b0772102031d5960d
+  ReactNativeExceptionHandler: 2ef25736761126fe199c412ed179e479661de794
   RNGestureHandler: afde2addc517e85cc97a25bfe119acbee779a7ce
   yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
-PODFILE CHECKSUM: b8e1a94fc4295aaddcca5212713fca6ce0e239bc
+PODFILE CHECKSUM: 8980a74dd548df30803dcd1d8df8ed01f7b52693
 
 COCOAPODS: 1.5.3
