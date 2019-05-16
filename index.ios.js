@@ -3,13 +3,13 @@ import {
     AppRegistry
 } from 'react-native';
 
-import MainNav from './js/MainNav';
-import FlexDimensionsBasics from './js/Demo/FlexDimensionsBasics'
-import SPRNComponent from './js/SPRNComponent';
+import MainNav from './src/MainNav';
+//import FlexDimensionsBasics from './js/Demo/FlexDimensionsBasics'
+import SPRNComponent from './src/SPRNComponent';
 export default class iOSRN extends SPRNComponent {
     render() {
         return (
-            <FlexDimensionsBasics />
+            <MainNav />
         );
     }
 }

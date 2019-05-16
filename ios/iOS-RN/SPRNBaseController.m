@@ -12,6 +12,8 @@
 #import "SingleClass.h"
 #import <React/RCTEventEmitter.h>
 #import <React/RCTLog.h>
+#import <React/RCTUIManager.h>
+#import <React/RCTBundleURLProvider.h>
 
 @interface SPRNBaseController ()
 @end
@@ -31,8 +33,11 @@
 
 - (void)loadView {
     //if (!self.modularName)
-    NSAssert(self.modularName != nil, @"modularName can't be nil");
-    RCTBridge *bridge = [SingleClass shared].bridge;
+    //NSAssert(self.modularName != nil, @"modularName can't be nil");
+    if (self.modularName == nil) {
+        self.modularName = @"SectionListBasics";
+    }
+    RCTBridge *bridge = [[SingleClass shared] bridge];
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:self.modularName initialProperties:nil];
     
     self.view = rootView;
@@ -72,17 +77,33 @@
 
 - (NSInteger)randamViewTag {
     return arc4random();
-    
 }
 
 - (void)dealloc {
     RCTRootView *rootView = (RCTRootView *)self.view;
     RCTLogInfo(@"rootView.subViews=%@", [rootView subviews]);
+//    NSMutableArray *arr = [NSMutableArray alloc] initun
+     
     for (UIView *v in [rootView subviews]) {
         [v removeFromSuperview];
     }
-    self.view = nil;
-    
+    //UIView *rootView2 = [rootView.bridge.uiManager viewForNativeID:rootView.nativeID withRootTag:rootView.reactTag];
+    RCTLogInfo(@"retainCount=%zd", [[RCTBundleURLProvider sharedSettings] viewRetainCount]);
+    RCTLogInfo(@"viewReleaseCount=%zd", [[RCTBundleURLProvider sharedSettings] viewReleaseCount]);
+
+}
+
+- (RCTRootView *)findRootView: (UIView *)view {
+    RCTRootView *rootView;
+    UIView *supView = view.superview;
+    while (supView && rootView == nil) {
+        if ([supView isKindOfClass:[RCTRootView class]]) {
+            rootView = (RCTRootView *)supView;
+        } else {
+            supView = supView.superview;
+        }
+    }
+    return rootView;
 }
 
 @end

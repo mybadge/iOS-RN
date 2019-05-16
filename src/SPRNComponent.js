@@ -13,7 +13,7 @@ export default class SPRNComponent extends React.Component {
         const viewState = nextProps['viewStateChange'];
 
         if (this.props['viewStateChange'] === viewState) {
-            return false;
+            return true;
         }
         switch (viewState) {
             case 'viewWillAppear':
@@ -44,6 +44,9 @@ export default class SPRNComponent extends React.Component {
         //SPCodepush.notifyAppReady();
     }
 
+    componentWillUnmount() {
+        
+    }
 
     //自定义方法
     viewWillAppear() {

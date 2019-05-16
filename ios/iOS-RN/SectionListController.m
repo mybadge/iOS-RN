@@ -17,6 +17,15 @@
 @implementation SectionListController
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.modularName = @"SectionListBasics";
+    }
+    return self;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:false animated:true];

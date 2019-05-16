@@ -18,7 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+
 @property (nonatomic, strong) RCTBridge *bridge;
+/** viewCount */
+@property (nonatomic, assign) NSInteger viewRetainCount;
+@property (nonatomic, assign) NSInteger viewReleaseCount;
 @end
 
 NS_ASSUME_NONNULL_END

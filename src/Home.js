@@ -9,6 +9,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 ;
 // var raToRnManger = NativeModules.EventEmitterManger
@@ -30,7 +31,15 @@ export default class Home extends Component {
     constructor(props) {
       super(props);
       const data = ['Two', 'SPWebView', 'FadeAnimate', 'DetailVC', 'CatchErrorPage', 
-      'FlexDimensionsBasics', 'Touchables', 'SectionListBasics', 
+      'FlexDimensionsBasics', 'Touchables', 
+      'SectionListBasics', 
+      'SectionListBasics2', 
+      'SectionListBasics3', 
+      'SectionListBasics4', 
+      'SectionListBasics5', 
+      'SectionListBasics6', 
+      'SectionListBasics7', 
+      'SectionListBasics8', 
       'Networking'
     ];
 
@@ -43,7 +52,8 @@ export default class Home extends Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
-            <View style={styles.container}>
+          <ScrollView style={styles.container}>
+            <View style={styles.container2}>
             {
               this.state.data.map((pageName)=>{
                 return (
@@ -55,8 +65,8 @@ export default class Home extends Component {
                 )
               })
             }
-                
             </View>
+          </ScrollView>
         );
     }
     navigatePress=(navigate)=>{
@@ -68,13 +78,16 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        backgroundColor: '#F5FCFF',
-        paddingLeft: 15,
-        paddingTop: 10,
+    },
+    container2: {
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      backgroundColor: '#F5FCFF',
+      paddingLeft: 15,
+      paddingTop: 10,
     },
     welcome: {
         fontSize: 20,

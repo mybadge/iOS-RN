@@ -10,6 +10,7 @@
 #import "SingleClass.h"
 #import <React/RCTBridge.h>
 #import <React/RCTBridgeDelegate.h>
+#import <React/RCTBundleURLProvider.h>
 
 @interface AppDelegate ()<RCTBridgeDelegate>
 
@@ -18,9 +19,10 @@
 @implementation AppDelegate
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
-    NSString *strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
-    NSURL *jsCodeLocation = [NSURL URLWithString:strUrl];
-    //NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+//    NSString *strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
+//    NSURL *jsCodeLocation = [NSURL URLWithString:strUrl];
+    //[RCTBundleURLProvider sharedSettings] resourceURLForResourceRoot:<#(NSString *)#> resourceName:<#(NSString *)#> resourceExtension:<#(NSString *)#> offlineBundle:<#(NSBundle *)#>
+    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
     return jsCodeLocation;
 }
 

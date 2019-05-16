@@ -17,6 +17,14 @@ import FlexDimensionsBasics from './Demo/FlexDimensionsBasics';
 import Touchables from './Demo/Touchables';
 import SectionListBasics from './Demo/SectionListBasics';
 import Networking from './Demo/Networking';
+import SectionListBasics2 from './Demo/SectionListBasics2';
+import SectionListBasics3 from './Demo/SectionListBasics3';
+import SectionListBasics4 from './Demo/SectionListBasics4';
+import SectionListBasics5 from './Demo/SectionListBasics5';
+import SectionListBasics6 from './Demo/SectionListBasics6';
+import SectionListBasics7 from './Demo/SectionListBasics7';
+import SectionListBasics8 from './Demo/SectionListBasics8';
+
 
 
 //在JavaScript中调用Object-C定义的方法，需要先导入NativeModules
@@ -34,7 +42,7 @@ const MainNavigator = createStackNavigator({
           <Button
               title='返回'
               onPress={ ()=> {
-                  RNCalliOSAction.calliOSActionWithOneParams('backAction');
+                RNCalliOSAction.calliOSActionWithOneParams('backAction');
               }}
           />
       ),
@@ -106,6 +114,48 @@ const MainNavigator = createStackNavigator({
     screen: Networking,
     navigationOptions: {
       title: 'Networking'
+    }
+  },
+  SectionListBasics2: {
+    screen: SectionListBasics2,
+    navigationOptions: {
+      title: 'SectionListBasics2'
+    }
+  },
+  SectionListBasics3: {
+    screen: SectionListBasics3,
+    navigationOptions: {
+      title: 'SectionListBasics3'
+    }
+  },
+  SectionListBasics4: {
+    screen: SectionListBasics4,
+    navigationOptions: {
+      title: 'SectionListBasics4'
+    }
+  },
+  SectionListBasics5: {
+    screen: SectionListBasics5,
+    navigationOptions: {
+      title: 'SectionListBasics5'
+    }
+  },
+  SectionListBasics6: {
+    screen: SectionListBasics6,
+    navigationOptions: {
+      title: 'SectionListBasics6'
+    }
+  },
+  SectionListBasics7: {
+    screen: SectionListBasics7,
+    navigationOptions: {
+      title: 'SectionListBasics7'
+    }
+  },
+  SectionListBasics8: {
+    screen: SectionListBasics8,
+    navigationOptions: {
+      title: 'SectionListBasics8'
     }
   },
   

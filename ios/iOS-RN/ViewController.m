@@ -20,14 +20,14 @@
 @implementation ViewController
 
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.modularName = @"SectionListBasics";
-    }
-    return self;
-}
+//- (instancetype)initWithCoder:(NSCoder *)coder
+//{
+//    self = [super initWithCoder:coder];
+//    if (self) {
+//        self.modularName = @"SectionListBasics";
+//    }
+//    return self;
+//}
 
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -41,12 +41,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"首页";
     
-//    UIButton * btn =[UIButton buttonWithType: UIButtonTypeCustom];
-//    btn.frame =CGRectMake(100,300, self.view.frame.size.width-200, 50);
-//    [btn setTitle:@"点我去RN" forState:UIControlStateNormal];
-//    btn.backgroundColor = [UIColor redColor];
-//    [btn addTarget:self action:@selector(press:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
+    UIButton * btn =[UIButton buttonWithType: UIButtonTypeCustom];
+    btn.frame =CGRectMake(100,300, self.view.frame.size.width-200, 50);
+    [btn setTitle:@"点我去RN" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor redColor];
+    [btn addTarget:self action:@selector(press:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 //
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backAction) name:@"backAction" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backToTopAction) name:@"backToTopAction" object:nil];
@@ -57,10 +57,10 @@
     
 }
 -(void)press:(UIButton *)btn{
-//    ReactViewController * two =[[ReactViewController alloc]init];
-//    [self.navigationController pushViewController:two animated:true];
-    SectionListController *vc = [SectionListController initVC];
-    [self.navigationController pushViewController:vc animated:true];
+    ReactViewController * two =[[ReactViewController alloc]init];
+    [self.navigationController pushViewController:two animated:true];
+//    SectionListController *vc = [SectionListController initVC];
+//    [self.navigationController pushViewController:vc animated:true];
 }
 
 - (void)doPushNotification2:(NSNotification *)notification{

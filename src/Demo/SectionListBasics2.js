@@ -1,53 +1,61 @@
 import React, { Component } from 'react';
 import { SectionList, StyleSheet, Text, View, NativeModules,
   Button,
+  Image,
   AppRegistry } from 'react-native';
 import SPRNComponent from '../SPRNComponent';
+import { ScrollView } from 'react-native-gesture-handler';
 
 var RNCalliOSAction = NativeModules.RNCalliOSAction;
-export default class SectionListBasics extends SPRNComponent {
+export default class SectionListBasics2 extends SPRNComponent {
 
   constructor(props) {
     super(props);
-    this.data = ['Jackson', 'James', 'Jillian', 'Devin'];
+    this.state = {
+      data: ['']
+    }
   }
 
   render() {
     return (
-      <View style={styles.container}>
-      
-        {
-          this.data.map((text)=>{
-            return this.renderRow(text);
-          })
-        }
-        {/* <SectionList
-          sections={[
-            {title: 'D', data: ['Jackson', 'James', 'Jillian', 'Devin']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jackson', 'James', 'Jillian', 'Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-          ]}
-          renderItem={({item}) => this.renderRow(item)}
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        /> */}
-        <Button
-              title='返回Top'
-              onPress={ ()=> {
-                  RNCalliOSAction.calliOSActionWithOneParams('backToTopAction');
-              }}
-          />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+        <Image source={require('./../../images/设计模式.png')} />
+          {
+            this.state.data.map((text)=>{
+              return this.renderRow(text);
+            })
+          }
+          
+          <Button
+                title='返回Top'
+                onPress={ ()=> {
+                    RNCalliOSAction.calliOSActionWithOneParams('backToTopAction');
+                }}
+            />
+            <Button
+                title='addData'
+                onPress={ ()=> {
+                    const data = this.state.data;
+                    
+                    this.setState({
+                      data: data.concat(['ddd', 'cccc', 'eeee'])
+                    });
+                }}
+            />
+        </View>
+      </ScrollView>
     );
   }
   renderRow = (item)=>{
     return (
-      <View>
+      <View key={item}>
           <Button
                 title='Next1'
                 style={{color: 'black', height: 44, width: 64}}
                 onPress={ ()=> {
-                    //RNCalliOSAction.openNativePage({'pageName': 'SPRNBaseController', 'modularName':'SectionListBasics'});
-                    this.openNativePage('SectionListBasics');
+                    //RNCalliOSAction.openNativePage({'pageName': 'SPRNBaseController', 'modularName':'SectionListBasics2'});
+                    this.openNativePage('SectionListBasics2');
                 }}
             />
             <Button
@@ -90,4 +98,4 @@ const styles = StyleSheet.create({
   },
 })
 
-AppRegistry.registerComponent('SectionListBasics', () => SectionListBasics);
+AppRegistry.registerComponent('SectionListBasics2', () => SectionListBasics2);
