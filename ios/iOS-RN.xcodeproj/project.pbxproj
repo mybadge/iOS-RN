@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B020007228EC42400E310EA /* RCTUIManager+leaks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B020006228EC42400E310EA /* RCTUIManager+leaks.m */; };
 		3B07D10E2285251A008B9A4A /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B07D10D2285251A008B9A4A /* main.jsbundle */; };
 		3B07D17B2289268B008B9A4A /* SPRNBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07D17A2289268B008B9A4A /* SPRNBaseController.m */; };
 		3B07D19F228A5A59008B9A4A /* SPReactRootViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07D19E228A5A59008B9A4A /* SPReactRootViewManager.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B020005228EC42400E310EA /* RCTUIManager+leaks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTUIManager+leaks.h"; sourceTree = "<group>"; };
+		3B020006228EC42400E310EA /* RCTUIManager+leaks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RCTUIManager+leaks.m"; sourceTree = "<group>"; };
 		3B07D10D2285251A008B9A4A /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		3B07D1792289268B008B9A4A /* SPRNBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRNBaseController.h; sourceTree = "<group>"; };
 		3B07D17A2289268B008B9A4A /* SPRNBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRNBaseController.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				3B6A0D3E2269DAC3001F627B /* LaunchScreen.storyboard */,
 				3B6A0D412269DAC3001F627B /* Info.plist */,
 				3B6A0D422269DAC3001F627B /* main.m */,
+				3B020005228EC42400E310EA /* RCTUIManager+leaks.h */,
+				3B020006228EC42400E310EA /* RCTUIManager+leaks.m */,
 			);
 			path = "iOS-RN";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				3B6A0D632269E583001F627B /* ReactViewController.m in Sources */,
 				3BA90BDA22827105000575D4 /* RNCalliOSAction.m in Sources */,
 				3BA90C8C2283D3BF000575D4 /* ReactSectionListView.m in Sources */,
+				3B020007228EC42400E310EA /* RCTUIManager+leaks.m in Sources */,
 				3B6A0D382269DAC1001F627B /* ViewController.m in Sources */,
 				3B07D17B2289268B008B9A4A /* SPRNBaseController.m in Sources */,
 				3B6A0D432269DAC3001F627B /* main.m in Sources */,

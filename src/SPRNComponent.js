@@ -3,6 +3,9 @@ import { SectionList, StyleSheet, Text, View, NativeModules,
   Button,
   AppRegistry } from 'react-native';
 
+
+const uiManager = NativeModules.RCTUIManager;
+
 export default class SPRNComponent extends React.Component {
 
     constructor(props) {
@@ -37,7 +40,7 @@ export default class SPRNComponent extends React.Component {
 
     //RN生命周期
     componentWillMount() {
-       
+       //alert(this.props + this.state);
     }
 
     componentDidMount() {
@@ -45,7 +48,7 @@ export default class SPRNComponent extends React.Component {
     }
 
     componentWillUnmount() {
-        
+        //uiManager.removeSubviewsFromContainerWithID(this.rootTag);
     }
 
     //自定义方法

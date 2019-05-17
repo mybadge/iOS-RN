@@ -16,6 +16,8 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/UIView+React.h>
 #import <React/UIView+Private.h>
+#import <React/RCTUIManagerUtils.h>
+#import "RCTUIManager+leaks.h"
 
 @interface SPRNBaseController ()
 @end
@@ -90,13 +92,23 @@
     
     UIView *content = rootView.contentView;
     NSArray<UIView *> *arr = [content reactSubviews];
-    
+    RCTLogInfo(@"content.subViews=%@", arr);
 //    [arr enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //        [content removeReactSubview:obj];
 //        obj = nil;
 //    }];
-    [content react_remountAllSubviews];
-    RCTLogInfo(@"content.subViews=%@", arr);
+    //[content react_remountAllSubviews];
+    RCTUIManager *manger = rootView.bridge.uiManager;
+    NSNumber *reactTag = content.reactTag;
+    //NSNumber *nativeID = rootView.nativeID;
+    
+    NSInteger maxReactTagValue = [[manger maxReactTagValue] intValue];
+    NSInteger totalSubviewCount = [manger reactViewSubviewCount];
+    RCTLogInfo(@"maxReactTagValue=%zd, totalSubviewCount=%zd", maxReactTagValue, totalSubviewCount);
+               
+//    RCTExecuteOnUIManagerQueue(^{
+//        [manger removeSubviewsFromContainerWithID:reactTag];
+//    });
     
 //    for (UIView *v in [rootView subviews]) {
 //        [v removeFromSuperview];
