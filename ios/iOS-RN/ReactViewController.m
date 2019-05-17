@@ -19,6 +19,15 @@
 
 @implementation ReactViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.modularName = @"iOSRN";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -27,8 +36,8 @@
     
     
     //self.navigationItem.title = @"我是包含RN的原生页面哟~";
-    ReactView * reactView = [[ReactView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height)];
-    [self.view addSubview:reactView];
+//    ReactView * reactView = [[ReactView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,  self.view.frame.size.height)];
+//    [self.view addSubview:reactView];
     
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:(UIBarButtonItemStylePlain) target:self action:@selector(backTopAction)];

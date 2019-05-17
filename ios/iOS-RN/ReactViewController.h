@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPRNBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ReactViewController : UIViewController
+@interface ReactViewController : SPRNBaseController
 
 @end
 

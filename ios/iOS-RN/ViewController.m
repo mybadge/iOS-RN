@@ -57,7 +57,7 @@
     
 }
 -(void)press:(UIButton *)btn{
-    ReactViewController * two =[[ReactViewController alloc]init];
+    ReactViewController * two =[[ReactViewController alloc] init];
     [self.navigationController pushViewController:two animated:true];
 //    SectionListController *vc = [SectionListController initVC];
 //    [self.navigationController pushViewController:vc animated:true];
@@ -71,13 +71,13 @@
         [self.navigationController pushViewController:vc animated:YES];
         return;
     } else {
-        ReactViewController *vc = [ReactViewController new];
+        ReactViewController *vc = [[ReactViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
 - (void)doPushNotification:(NSNotification *)notification{
     NSLog(@"成功收到===>通知");
-    ReactViewController *vc = [ReactViewController new];
+    ReactViewController *vc = [[ReactViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     
     //注意不能在这里移除通知否则pus进去后有pop失效

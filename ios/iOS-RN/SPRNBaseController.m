@@ -14,6 +14,8 @@
 #import <React/RCTLog.h>
 #import <React/RCTUIManager.h>
 #import <React/RCTBundleURLProvider.h>
+#import <React/UIView+React.h>
+#import <React/UIView+Private.h>
 
 @interface SPRNBaseController ()
 @end
@@ -41,6 +43,8 @@
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:self.modularName initialProperties:nil];
     
     self.view = rootView;
+    RCTLogInfo(@"retainCount=%zd", [[RCTBundleURLProvider sharedSettings] viewRetainCount]);
+    RCTLogInfo(@"viewReleaseCount=%zd", [[RCTBundleURLProvider sharedSettings] viewReleaseCount]);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,10 +87,20 @@
     RCTRootView *rootView = (RCTRootView *)self.view;
     RCTLogInfo(@"rootView.subViews=%@", [rootView subviews]);
 //    NSMutableArray *arr = [NSMutableArray alloc] initun
-     
-    for (UIView *v in [rootView subviews]) {
-        [v removeFromSuperview];
-    }
+    
+    UIView *content = rootView.contentView;
+    NSArray<UIView *> *arr = [content reactSubviews];
+    
+//    [arr enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [content removeReactSubview:obj];
+//        obj = nil;
+//    }];
+    [content react_remountAllSubviews];
+    RCTLogInfo(@"content.subViews=%@", arr);
+    
+//    for (UIView *v in [rootView subviews]) {
+//        [v removeFromSuperview];
+//    }
     //UIView *rootView2 = [rootView.bridge.uiManager viewForNativeID:rootView.nativeID withRootTag:rootView.reactTag];
     RCTLogInfo(@"retainCount=%zd", [[RCTBundleURLProvider sharedSettings] viewRetainCount]);
     RCTLogInfo(@"viewReleaseCount=%zd", [[RCTBundleURLProvider sharedSettings] viewReleaseCount]);
